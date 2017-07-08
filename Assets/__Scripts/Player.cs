@@ -19,6 +19,13 @@ public class Player {
 		if (hand == null)
 			hand = new List<CardBartok> ();
 		hand.Add (eCB);
+		if (type == PlayerType.human) {
+			CardBartok[] cards = hand.ToArray ();
+			cards = cards.OrderBy (cd => cd.rank).ToArray ();
+			hand = new List<CardBartok> (cards);
+		}
+		eCB.SetSortingLayerName ("10");
+		eCB.eventualSortLayer = handSlotDef.layerName;
 		FanHand ();
 		return (eCB);
 	}
@@ -45,11 +52,16 @@ public class Player {
 			pos = rotQ * pos;
 			pos += handSlotDef.pos;
 			pos.z = -0.5f * i;
+			hand [i].MoveTo (pos, rotQ);
+			hand [i].state = CBState.toHand;
+			/*
 			hand [i].transform.localPosition = pos;
 			hand [i].transform.rotation = rotQ;
 			hand [i].state = CBState.hand;
+			*/
 			hand [i].faceUp = (type == PlayerType.human);
-			hand [i].SetSortOrder (i * 4);
+			hand [i].eventualSortOrder = i * 4;
+			//hand [i].SetSortOrder (i * 4);
 		}
 	}
 }
