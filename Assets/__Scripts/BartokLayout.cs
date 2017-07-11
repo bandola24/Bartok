@@ -37,7 +37,7 @@ public class BartokLayout : MonoBehaviour {
 		PT_XMLHashList slotsX = xml ["slot"];
 		for (int i = 0; i < slotsX.Count; i++) {
 			tSD = new SlotDef ();
-			if (slotsX [1].HasAtt ("type")) {
+			if (slotsX [i].HasAtt ("type")) {
 				tSD.type = slotsX [i].att ("type");
 			} else {
 				tSD.type = "slot";
