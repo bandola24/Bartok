@@ -138,4 +138,23 @@ MonoBehaviour:
   bezierRots: []
   timeStart: 0
   timeDuration: 0
+  eventualSortOrder: 0
+  eventualSortLayer: 
   reportFinishTo: {fileID: 0}
+  callbackPlayer:
+    type: 1
+    playerNum: 0
+    hand: []
+    handSlotDef:
+      x: 0
+      y: 0
+      faceUp: 0
+      layerName: Default
+      layerID: 0
+      id: 0
+      hiddenBy: 
+      rot: 0
+      type: slot
+      stagger: {x: 0, y: 0}
+      player: 0
+      pos: {x: 0, y: 0, z: 0}

@@ -51,7 +51,7 @@ public class Card : MonoBehaviour {
 				continue;
 			}
 			switch (tSR.gameObject.name) {
-			case "black":
+			case "back":
 				tSR.sortingOrder = sORD + 2;
 				break;
 			case "face":
